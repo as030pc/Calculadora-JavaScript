@@ -19,28 +19,28 @@ const Calculadora = () => {
   
   const clear = (e) => {
     setState("")
-    setFormula("")
+    
   }
   
   const evaluar = (e) => {
      if (state.includes("..")) {
-       state.replace("..", ".")
+       setState("")
      }
       else {
-        setState(eval(state))
+        setState((eval(state)).toString())
       }
   }
 
 
   
   const [state, setState] = React.useState("")
-  const [formula, setFormula] = React.useState("")
+
   
   
   return (
-      <div>
+      <div className = "calculadora">
 
-        <div> {formula} </div>
+        
          <input id = "display" value = {state}  />
       
       <div className = "teclas">{teclas.map((tecla) => 
